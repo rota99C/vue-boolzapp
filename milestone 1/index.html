@@ -12,17 +12,79 @@
     <body>
         <div id="container">
             <div id="container-header"></div>
-            <div class="totalchat">
+            <div id="totalchat">
                 <div id="sidebar">
-                    <div class="sidebar-head"></div>
-                    <div class="sidebar-notification"></div>
-                    <div class="sidebar-search"></div>
-                    <div class="sidebar-contacts"></div>
+                    <div class="sidebar-head">
+                        <div class="my-profile">
+                            <img src="./img/avatar_8.jpg"
+                                alt="immagine-profilo">
+                        </div>
+                        <p><strong>Rota Chandra</strong></p>
+                        <div class="icon-header">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-notification">
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a class="active-notification" href="">Attiva
+                                notifiche desktop</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-search">
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="sidebar-contacts">
+                        <div v-for="contact in contacts" class="people">
+                            <div class="profile-contact">
+                                <img :src="'./img/avatar'+
+                                    contact.avatar + '.jpg'" alt="">
+                            </div>
+                            <p><strong>{{contact.name}}</strong></p>
+                        </div>
+
+
+                    </div>
                 </div>
                 <div id="chat">
-                    <div class="chat-header"></div>
-                    <div class="chat-conversation"></div>
-                    <div class="chat write"></div>
+                    <div class="chat-head">
+                        <div class="user-online">
+                            <div class="user-online-img">
+                                <img src="./img/avatar_1.jpg" alt="">
+                            </div>
+                            <div>
+                                <p><strong>Michele</strong></p>
+                                <p>ultimo accesso alle 18:30</p>
+                            </div>
+
+                        </div>
+                        <div>
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="chat-conversation">
+                        <div class="sent"><p>Hai portato a spasso il cane?</p>
+                            <p class="date">10/01/2020 16:15:22</p>
+                        </div>
+                        <div class="recived"><p>tutto fatto</p>
+                            <p class="date">10/01/2020 16:15:22</p>
+                        </div>
+                    </div>
+                    <div class="chat-write">
+                        <i class="far fa-smile"></i>
+                        <input type="text">
+                        <i class="fas fa-microphone"></i>
+
+                    </div>
 
                 </div>
 
