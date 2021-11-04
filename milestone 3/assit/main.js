@@ -157,11 +157,13 @@ var app = new Vue({
             let totalDate = `${day}/${month}/${year}  ${hours}:${minute}:${second}`
             console.log(totalDate);
 
-            this.message.push({
+            let newObjects = {
                 date: totalDate,
                 text: newMessage_1,
                 status: "sent"
-            })
+            }
+
+            this.contacts[this.counter].messages.push(newObjects)
         }
     }
 });
