@@ -164,6 +164,31 @@ var app = new Vue({
             }
 
             this.contacts[this.counter].messages.push(newObjects)
+
+            this.risposta()
+
+
+        },
+        risposta() {
+            var questo = this;
+            setTimeout(function () {
+                const now = new Date()
+                let day = now.getDate()
+                let month = now.getMonth()
+                let year = now.getFullYear()
+                let hours = now.getHours()
+                let minute = now.getMinutes()
+                let second = now.getSeconds()
+                let totalDate = `${day}/${month}/${year}  ${hours}:${minute}:${second}`
+                let autoRisposta = {
+                    date: totalDate,
+                    text: 'Ok',
+                    status: "received"
+                }
+                questo.contacts[questo.counter].messages.push(autoRisposta)
+
+            }, 1000)
         }
+
     }
 });

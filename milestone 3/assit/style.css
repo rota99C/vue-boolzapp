@@ -93,6 +93,7 @@
   height: 513px;
   background-image: url(../img/mine.jpg);
   padding: 50px 85px;
+  overflow-y: scroll;
 }
 
 .chat-write {
