@@ -179,7 +179,7 @@
 }
 
 .sent,
-.recived {
+.received {
   display: block;
   padding: 22px;
   border-radius: 10px;
@@ -193,7 +193,7 @@
   background-color: #d5f9ba;
 }
 
-.recived {
+.received {
   float: left;
   clear: both;
   background-color: white;
