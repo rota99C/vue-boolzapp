@@ -45,11 +45,12 @@
                     </div>
                     <!-- sidebar contacts -->
                     <div class="sidebar-contacts">
-                        <div v-for="contact in contacts" class="people d-flex
+                        <div v-for="contact in contacts" @click="anotherUser(i)"
+                            class="people d-flex
                             align-items-center">
                             <div class="profile-contact">
                                 <img :src="'./img/avatar'+
-                                    contact.avatar + '.jpg'" alt="">
+                                    contacts.avatar + '.jpg'" alt="">
                             </div>
                             <p><strong>{{contact.name}}</strong></p>
                         </div>

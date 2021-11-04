@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#totalchat',
     data: {
+        counter: 0,
         contacts: [
             {
                 name: 'Michele',
