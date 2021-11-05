@@ -63,11 +63,21 @@
   background-color: white;
   padding: 12px 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
 }
 
 .sidebar-search input {
   width: 100%;
   height: 47px;
+  border: none;
+}
+
+.sidebar-search i {
+  font-size: 20px;
+  color: #b1b1b1;
+  margin-right: 20px;
 }
 
 .sidebar-contacts {
@@ -95,6 +105,7 @@
   height: 513px;
   background-image: url(../img/mine.jpg);
   padding: 50px 85px;
+  overflow-y: scroll;
 }
 
 .chat-write {
@@ -181,7 +192,7 @@
 }
 
 .sent,
-.recived {
+.received {
   display: block;
   padding: 22px;
   border-radius: 10px;
@@ -195,7 +206,7 @@
   background-color: #d5f9ba;
 }
 
-.recived {
+.received {
   float: left;
   clear: both;
   background-color: white;
@@ -214,10 +225,47 @@
   margin-bottom: 10px;
 }
 
+.chat-conversation i {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #b1b1b1;
+}
+
 .message-option {
   background-color: white;
+  padding: 20px;
+  width: 156px;
+  position: absolute;
+  right: 10px;
+  z-index: 3;
 }
 
 .message-option ul li {
-  list-style-type: none;
+  list-style: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.last-message {
+  color: #b1b1b1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.info-contact {
+  width: 298px;
+  position: relative;
+}
+
+.last-msg-date {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: #b1b1b1;
+}
+
+.focused {
+  background-color: grey;
 }
