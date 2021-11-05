@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assit/style.css">
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+        <title>BoolzApp M1</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="container-header"></div>
+            <div id="totalchat" class="d-flex">
+                <!-- sidebar -->
+                <div id="sidebar">
+                    <!-- sidebar head -->
+                    <div class="sidebar-head d-flex align-items-center">
+                        <div class="my-profile">
+                            <img src="./img/avatar_8.jpg"
+                                alt="immagine-profilo">
+                        </div>
+                        <p><strong>Rota Chandra</strong></p>
+                        <div class="icon-header d-flex align-items-center">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <!-- sidebar notification -->
+                    <div class="sidebar-notification d-flex align-items-center">
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a class="active-notification" href="">Attiva
+                                notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- sidebar search -->
+                    <div class="sidebar-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" @keyup="searchUser" @name="cerca"
+                            v-model="cerca"
+                            placeholder="Cerca o inzia una nuova Chat">
+                    </div>
+                    <!-- sidebar contacts -->
+                    <div class="sidebar-contacts">
+                        <div v-for="(contact,i) in contacts"
+                            @click="anotherUser(i)"
+                            class="people d-flex
+                            align-items-center" v-if="contact.visible">
+                            <div class="profile-contact">
+                                <img :src="'./img/avatar'+
+                                    contact.avatar + '.jpg'" alt="">
+                            </div>
+                            <p><strong>{{contact.name}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- chat -->
+                <div id="chat">
+                    <!-- chat head -->
+                    <div class="chat-head d-flex align-items-center">
+                        <div class="user-online d-flex align-items-center">
+                            <div class="user-online-img">
+                                <img :src="'./img/avatar'+
+                                    contacts[counter].avatar + '.jpg'" alt="">
+                            </div>
+                            <div>
+                                <p><strong>{{contacts[counter].name}}</strong></p>
+                                <p>ultimo accesso alle 18:30</p>
+                            </div>
+
+                        </div>
+                        <div>
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <!-- chat conversation -->
+                    <div class="chat-conversation">
+                        <div v-for="message in contacts[counter].messages"
+                            :class="message.status">
+                            <p>{{message.text}}</p>
+                            <p class="date">{{message.date}}</p>
+                        </div>
+                    </div>
+                    <!-- chat write -->
+                    <div class="chat-write d-flex align-items-center">
+                        <i class="far fa-smile"></i>
+                        <input class="input-write" @keyup.enter="newMessage()"
+                            type="text">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="./assit/main.js"></script>
+    </body>
+</html>
